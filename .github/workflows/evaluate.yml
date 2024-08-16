@@ -20,7 +20,10 @@ jobs:
 
       - name: Collect screenshots
         uses: bmeaut/ahk-action-neptuncheck@v1
+
+      - name: Publish result
+        uses: docker://ghcr.io/akosdudas/ahk-publish-results-pr:v1
         with:
           GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
           AHK_IMAGEEXT: ".png"
-          AHK_RESULTFILE: ""
+  
